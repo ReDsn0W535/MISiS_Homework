@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginStart="10dp"
+    android:layout_marginEnd="10dp">
+
+
+    <TextView
+        android:id="@+id/cancel_btn"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:backgroundTint="@color/black"
+        android:text="@string/cancel_btn_text"
+        android:textColor="@color/blue"
+        android:gravity="center"/>
+
+    <TextView
+        android:id="@+id/act_name"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:text="@string/layout_creation_name"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:textColor="@color/white"
+        android:gravity="center"/>
+
+    <TextView
+        android:id="@+id/accept_btn"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+
+        android:layout_alignParentEnd="true"
+        android:backgroundTint="@color/black"
+        android:text="@string/accept_btn_text"
+        android:textColor="@color/blue"
+        android:gravity="center"/>
+
+    <EditText
+        android:id="@+id/task_field"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="100dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/universal_view_design_background"
+        android:layout_below="@id/cancel_btn"
+        android:hint="@string/task_hint"/>
+
+    <RelativeLayout
+        android:id="@+id/date_and_importance"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical"
+        android:background="@drawable/universal_view_design_background"
+        android:layout_below="@id/task_field">
+
+        <TextView
+            android:id="@+id/importance"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center_vertical"
+            android:text="@string/importance_field"
+            android:textColor="@color/white"
+            android:layout_toStartOf="@id/importance_spinner"/>
+
+        <Spinner
+            android:id="@+id/importance_spinner"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/spinner_background"
+            android:entries="@array/importance_array"/>
+
+        <View
+            android:id="@+id/split_line"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/grey"
+            android:alpha="0.5"
+            android:layout_below="@id/importance"/>
+
+        <TextView
+            android:id="@+id/deadline_text"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@id/split_line"
+            android:layout_toStartOf="@id/toggle_deadline"
+            android:gravity="center_vertical"
+            android:text="@string/deadline_field"/>
+
+
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/toggle_deadline"
+            android:layout_width="75dp"
+            android:layout_height="50dp"
+            android:gravity="center"
+            app:track="@drawable/track_toggle_button"
+            app:thumbTint="@color/white"
+            android:layout_alignParentEnd="true"
+
+            android:layout_below="@id/split_line"/>
+
+    </RelativeLayout>
+
+    <CalendarView
+        android:id="@+id/deadline_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/date_and_importance"/>
+
+    <TextView
+        android:id="@+id/delete_task"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/universal_view_design_background"
+        android:text="@string/delete_btn_text"
+        android:gravity="center"
+        android:layout_below="@id/deadline_date"
+        android:textColor="@color/red"/>
+
+</RelativeLayout>

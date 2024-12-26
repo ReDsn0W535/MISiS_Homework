@@ -3,14 +3,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_marginStart="10dp"
-    android:layout_marginEnd="10dp">
+    android:padding="5dp">
 
 
     <TextView
         android:id="@+id/cancel_btn"
         android:layout_width="100dp"
         android:layout_height="50dp"
+        android:layout_marginTop="50dp"
         android:backgroundTint="@color/black"
         android:text="@string/cancel_btn_text"
         android:textColor="@color/blue"
@@ -24,13 +24,14 @@
         android:layout_alignParentTop="true"
         android:layout_centerInParent="true"
         android:textColor="@color/white"
+        android:textSize="18sp"
         android:gravity="center"/>
 
     <TextView
         android:id="@+id/accept_btn"
         android:layout_width="100dp"
         android:layout_height="50dp"
-
+        android:layout_marginTop="50dp"
         android:layout_alignParentEnd="true"
         android:backgroundTint="@color/black"
         android:text="@string/accept_btn_text"
@@ -41,7 +42,7 @@
         android:id="@+id/task_field"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:minHeight="100dp"
+        android:minHeight="75dp"
         android:layout_marginTop="30dp"
         android:background="@drawable/universal_view_design_background"
         android:layout_below="@id/cancel_btn"
@@ -53,25 +54,25 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:orientation="vertical"
-        android:background="@drawable/universal_view_design_background"
-        android:layout_below="@id/task_field">
+        android:layout_below="@id/task_field"
+        android:background="@drawable/universal_view_design_background">
 
         <TextView
             android:id="@+id/importance"
-            android:layout_width="match_parent"
+            android:layout_width="150dp"
             android:layout_height="50dp"
             android:gravity="center_vertical"
             android:text="@string/importance_field"
             android:textColor="@color/white"
-            android:layout_toStartOf="@id/importance_spinner"/>
+            android:layout_alignParentStart="true"/>
 
         <Spinner
             android:id="@+id/importance_spinner"
-            android:layout_width="100dp"
+            android:layout_width="wrap_content"
             android:layout_height="50dp"
-            android:layout_alignParentEnd="true"
-            android:background="@drawable/spinner_background"
-            android:entries="@array/importance_array"/>
+            android:layout_toEndOf="@id/importance"
+            android:entries="@array/importance_array"
+            android:spinnerMode="dropdown"/>
 
         <View
             android:id="@+id/split_line"
@@ -83,25 +84,26 @@
 
         <TextView
             android:id="@+id/deadline_text"
-            android:layout_width="match_parent"
+            android:layout_width="150dp"
             android:layout_height="50dp"
             android:layout_below="@id/split_line"
-            android:layout_toStartOf="@id/toggle_deadline"
+            android:layout_alignParentStart="true"
             android:gravity="center_vertical"
+            android:textColor="@color/white"
             android:text="@string/deadline_field"/>
-
 
 
         <androidx.appcompat.widget.SwitchCompat
             android:id="@+id/toggle_deadline"
-            android:layout_width="75dp"
+            android:layout_width="50dp"
             android:layout_height="50dp"
+            android:layout_below="@id/split_line"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="150dp"
             android:gravity="center"
-            app:track="@drawable/track_toggle_button"
             app:thumbTint="@color/white"
-            android:layout_alignParentEnd="true"
 
-            android:layout_below="@id/split_line"/>
+            app:track="@drawable/track_toggle_button" />
 
     </RelativeLayout>
 
@@ -109,14 +111,17 @@
         android:id="@+id/deadline_date"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/date_and_importance"/>
+        android:layout_below="@id/date_and_importance"
+        android:layout_marginTop="3dp" />
 
     <TextView
         android:id="@+id/delete_task"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginTop="10dp"
-        android:background="@drawable/universal_view_design_background"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/delete_button_background"
         android:text="@string/delete_btn_text"
         android:gravity="center"
         android:layout_below="@id/deadline_date"

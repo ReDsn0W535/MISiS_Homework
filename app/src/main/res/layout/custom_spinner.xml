@@ -15,7 +15,7 @@
     <View
         android:layout_width="2dp"
         android:layout_marginTop="5dp"
-        android:layout_marginStart="4dp"
+        android:layout_marginStart="10dp"
         android:layout_height="40dp"
         android:background="@color/grey"
         android:alpha="0.5"/>
@@ -24,7 +24,6 @@
         android:id="@+id/spinner_item_text"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:gravity="center"
-        android:text="text"/>
+        android:gravity="center"/>
 
 </LinearLayout>

@@ -9,6 +9,7 @@
     <string name="accept_btn_text">Save</string>
     <string name="deadline_field">deadline</string>
     <string name="importance_field">priority</string>
+    <string name="task_mark_text">mark as done</string>
 
     <string-array name="importance_array">
         <item>low</item>

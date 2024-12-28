@@ -57,11 +57,13 @@ class CreateTaskActivity : AppCompatActivity() {
             val imp = binding.importanceSpinner.selectedItem as SpinnerItem
             val taskText = binding.taskField.text.toString()
             val tm = LocalDate.now().toString()
+            val isDone = binding.taskDoneCheckbox.isChecked
             if (jsonItem == "None") {
                 item = ToDoItem(
                     text = taskText,
                     importance = imp.text,
                     deadline = dateString,
+                    isDone = isDone,
                     creationDate = tm,
                     addDate = tm
                 )
@@ -71,6 +73,7 @@ class CreateTaskActivity : AppCompatActivity() {
                 item?.importance = imp.text
                 item?.deadline = dateString
                 item?.addDate = tm
+                item?.isDone = isDone
                 intent.putExtra("newTask", false)
                 intent.putExtra("position", itemPos)
             }
@@ -93,6 +96,7 @@ class CreateTaskActivity : AppCompatActivity() {
             binding.deadlineText.text = txt
         }
 
+
     }
 
     @RequiresApi(Build.VERSION_CODES.O)
@@ -108,6 +112,7 @@ class CreateTaskActivity : AppCompatActivity() {
         binding.taskField.setText(item.text)
         binding.deadlineText.text = deadlineText
         binding.importanceSpinner.setSelection(arr.indexOf(item.importance))
+        binding.taskDoneCheckbox.isChecked = item.isDone
 
     }
 

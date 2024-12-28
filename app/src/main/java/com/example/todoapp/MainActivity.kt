@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
+import android.widget.CheckBox
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
@@ -20,7 +21,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var data: MutableList<ToDoItem>
     private val resultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
         if (result.resultCode == Activity.RESULT_OK) {
-            val resultIntent : Intent? = result.data
+            val resultIntent: Intent? = result.data
             val jsonResult = resultIntent?.getStringExtra("result")
             val taskStatus = resultIntent?.getBooleanExtra("newTask", false)
             val itemPos = resultIntent?.getIntExtra("position", -1)
@@ -42,8 +43,6 @@ class MainActivity : AppCompatActivity() {
         todoAdapter = TodoListAdapter(data, clicker)
         binding.todoRecycler.adapter = todoAdapter
         binding.todoRecycler.layoutManager = LinearLayoutManager(this)
-
-
         binding.addTaskBtn.setOnClickListener {
             val intent = Intent(this, CreateTaskActivity::class.java)
             intent.putExtra("item", "None")

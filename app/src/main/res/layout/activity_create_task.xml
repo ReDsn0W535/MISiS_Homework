@@ -38,14 +38,34 @@
         android:textColor="@color/blue"
         android:gravity="center"/>
 
+    <CheckBox
+        android:id="@+id/task_done_checkbox"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="70dp"
+        android:layout_marginEnd="-20dp"
+        android:layout_toStartOf="@id/act_name"
+        android:layout_below="@id/act_name"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:text="@string/task_mark_text"
+        android:gravity="center"
+        android:textColor="@color/grey"
+        android:layout_marginStart="20dp"
+        android:layout_toEndOf="@id/task_done_checkbox"
+        android:layout_above="@id/task_field"/>
+
     <EditText
         android:id="@+id/task_field"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:minHeight="75dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/universal_view_design_background"
-        android:layout_below="@id/cancel_btn"
+        android:layout_below="@id/task_done_checkbox"
         android:hint="@string/task_hint"/>
 
     <RelativeLayout

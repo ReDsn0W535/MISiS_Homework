@@ -1,8 +1,10 @@
 package com.example.todoapp
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.CheckBox
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.content.res.AppCompatResources
@@ -12,14 +14,15 @@ class ItemViewHolder(itemView : View, click : (Int) -> Unit) : RecyclerView.View
 
     init {
         itemView.setOnClickListener {
+
             click(super.getAdapterPosition())
         }
     }
 
     private val item: TextView = itemView.findViewById(R.id.todo_item)
-    private val checkbox: ImageView =  itemView.findViewById(R.id.checkbox_item)
-    private val lineView: View = itemView.findViewById(R.id.border_line)
-    fun bind(task : ToDoItem, position : Int, size : Int) {
+    private val checkbox: ImageView =  itemView.findViewById(R.id.importance_flag)
+    private val isDone : CheckBox = itemView.findViewById(R.id.is_done_checkbox)
+    fun bind(task : ToDoItem) {
         item.text = task.text
         val checkboxResId = when(task.importance) {
            "mid" -> R.drawable.mid_importance_checkbox_background
@@ -27,11 +30,10 @@ class ItemViewHolder(itemView : View, click : (Int) -> Unit) : RecyclerView.View
            else -> R.drawable.low_importance_checkbox_background
         }
         checkbox.background = AppCompatResources.getDrawable(checkbox.context, checkboxResId)
-        if (size-1 == position) {
-            lineView.visibility = View.GONE
-        } else {
-            lineView.visibility = View.VISIBLE
+        isDone.setOnClickListener {
+            task.isDone = isDone.isChecked
         }
+        isDone.isChecked = task.isDone
     }
 }
 class TodoListAdapter(private var data : MutableList<ToDoItem>, private val onItemClick : (ToDoItem, Int) -> Unit) : RecyclerView.Adapter<ItemViewHolder>() {
@@ -49,7 +51,7 @@ class TodoListAdapter(private var data : MutableList<ToDoItem>, private val onIt
 
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         val task = data[position]
-        holder.bind(task, position, itemCount)
+        holder.bind(task)
     }
 
 }

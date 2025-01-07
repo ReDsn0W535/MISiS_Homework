@@ -40,7 +40,7 @@ android {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.1"
+        kotlinCompilerExtensionVersion = "1.5.14"
     }
     packaging {
         resources {
@@ -50,11 +50,15 @@ android {
 }
 
 dependencies {
+    implementation(libs.androidx.activity.compose)
     implementation(libs.gson)
     implementation (libs.gson)
     implementation(libs.androidx.core.ktx)
     implementation(libs.appcompat)
     implementation(libs.androidx.runtime.android)
+    implementation(libs.androidx.material3.android)
+    implementation(libs.androidx.storage)
+    implementation(libs.androidx.navigation.compose)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

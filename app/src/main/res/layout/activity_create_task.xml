@@ -9,7 +9,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="5dp">
+        android:padding="4dp">
 
 
         <TextView
@@ -78,7 +78,7 @@
             android:id="@+id/date_and_importance"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="8dp"
             android:orientation="vertical"
             android:layout_below="@id/task_field"
             android:background="@drawable/universal_view_design_background">
@@ -138,7 +138,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/date_and_importance"
-            android:layout_marginTop="3dp" />
+            android:layout_marginTop="4dp" />
 
         <TextView
             android:id="@+id/delete_task"

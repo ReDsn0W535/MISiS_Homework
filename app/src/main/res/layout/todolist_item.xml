@@ -16,8 +16,8 @@
             android:id="@+id/importance_flag"
             android:layout_width="20dp"
             android:layout_height="20dp"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="30dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
             android:background="@drawable/low_importance_checkbox_background" />
 
         <View
@@ -46,7 +46,7 @@
             android:layout_width="50dp"
             android:layout_height="75dp"
             android:layout_alignParentEnd="true"
-            android:layout_marginEnd="30dp"/>
+            android:layout_marginEnd="32dp"/>
 
 
     </RelativeLayout>
@@ -54,7 +54,7 @@
     <View
         android:id="@+id/border_line"
         android:layout_width="match_parent"
-        android:layout_height="10dp"
+        android:layout_height="8dp"
         android:background="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/task_layout" />
